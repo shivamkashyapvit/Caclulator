@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<title>Add two integer numbers using JavaScript.</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </head>
+    <body>
+ 
+        <div class="container">
+            <div class="page-header bg-dark">
+                <h2 class='fas fa-graduation-cap' style='font-size:48px;color:blue'>SCHOOL RESULTS</h2>
+              </div>
+           <div class="row">
+            <div class="col-sm-6" >
+                 <div class="card1" >
+            
+                    <div class="card-body">
+                        <h4 class="card-title">Result calculator</h4>
+
+
+                        <table class="table table-striped">
+                            <tr><td>Name : </td><td><input type="text"  class="textbox" id="txtName" ></td></tr>
+                            <tr><td>Class: </td><td><input type="text"  class="textbox" id="txtClass" ></td></tr>
+                            <tr><td>Roll: </td><td><input type="text"  class="textbox" id="txtroll" ></td></tr>
+                            <tr><td>No of subject you enter marks:  </td><td><input type="text"  class="textbox" id="ns" ></td></tr>
+                        </table>
+
+
+
+                               
+             
+                                            <table class="table table-striped">
+                                                <tr><td>SUBJECT 1 </td><td><input type="text"  class="textbox" id="textIn1" ></td></tr>
+                                                <tr><td>SUBJECT 2 </td><td><input type="text" class="textbox"  id="textIn2"></td></tr>
+                                                <tr><td>SUBJECT 3 </td><td><input type="text"  class="textbox" id="textIn3" ></td></tr>
+                                                <tr><td>SUBJECT 4 </td><td><input type="text" class="textbox"  id="textIn4"></td></tr>
+                                                <tr><td>SUBJECT 5 </td><td><input type="text"  class="textbox" id="textIn5" ></td></tr>
+                                                <tr><td>SUBJECT 6 </td><td><input type="text" class="textbox"  id="textIn6"></td></tr>
+                                                <tr><td>SUBJECT 7 </td><td><input type="text"  class="textbox" id="textIn7" ></td></tr>
+                                                <tr><td>SUBJECT 8 </td><td><input type="text" class="textbox"  id="textIn8"></td></tr>
+                                                <tr><td>SUBJECT 9 </td><td><input type="text"  class="textbox" id="textIn9" ></td></tr>
+                                                <tr><td>SUBJECT 10 </td><td><input type="text" class="textbox"  id="textIn10"></td></tr>
+                                                
+                                                <tr><td></td><td><input type="button" class="btn btn-success" id="btnSum" value="Calculate" onClick="addTwoNumbers('textIn1','textIn2')"></td></tr>
+                                                </table>
+
+
+
+             
+                           </div>
+                       </div>
+               </div>
+            <div class="col-sm-6" >
+                <div class="card2" >
+            
+                  <div class="card-body">
+                     <h4 class="card-title">RESULTS</h4>
+
+
+                                <table class="table table-striped">
+                                    <tr><td>Name</td><td><input type="text" id="txtStudentName" readonly></td></tr>
+                                    <tr><td>Class</td><td><input type="text" id="txtStudentClass" readonly></td></tr>
+                                    <tr><td>Roll</td><td><input type="text" id="txtStudentRoll" readonly></td></tr>
+                                
+                                    <tr><td>Total Marks</td><td><input type="text" id="txtTotalMarks" readonly></td></tr>
+                                    <tr><td>Average Marks</td><td><input type="text" id="txtAvgMarks" readonly></td></tr>
+                                    <tr><td>Grade</td><td><input type="text" id="txtGrade" readonly></td></tr>
+                                    <tr><td>Remarks</td><td><input type="text" id="txtResult" readonly></td></tr>
+                                 </table>
+                                   <input type="button" id="btnSum" class="btn btn-danger" value="PRINT PAGE" onClick=window.print() />
+                    </div>
+                </div>
+              </div>
+             </div>
+          </div>
+          
+          <br>
+          
+          
+        </body>
+
+</html>
+
+<script type="text/javascript">
+    function addTwoNumbers(){
+        var x=document.getElementById("textIn1").value;
+        var y=document.getElementById("textIn2").value;
+        var a=document.getElementById("textIn3").value;
+        var b=document.getElementById("textIn4").value;
+        var c=document.getElementById("textIn5").value;
+        var d=document.getElementById("textIn6").value;
+        var e=document.getElementById("textIn7").value;
+        var f=document.getElementById("textIn8").value;
+        var g=document.getElementById("textIn9").value;
+        var h=document.getElementById("textIn10").value;
+        var z=document.getElementById("ns").value;
+        
+        var totalMarks=0;
+        var per=0;
+        var grade = "";
+        var result = "";
+        
+        totalMarks=(Number(x)+Number(y)+Number(a)+Number(b)+Number(c)+Number(d)+Number(e)+Number(f)+Number(g)+Number(h));
+        per=totalMarks/(Number(z));
+        switch(
+            
+                
+                    //usage of ternary operator inside switch
+
+                    (per > 60 && per <= 100) ? 1 : 
+                    (per > 50 && per < 60) ? 2 : 
+                    (per > 40 && per < 50) ? 3 : 
+                    (per > 0 && per < 40) ? 4 : 0
+                  )
+                    
+                    {
+                        case 1 :grade = "A";result="First Class";break;
+                        case 2 :grade = "B"; result="Second Class";break;
+                        case 3 :grade = "C"; result="Third Class";break;
+                        case 4 :grade = "D"; result="Fail";break;
+                    }
+        
+                    document.getElementById('txtStudentName').value = document.getElementById('txtName').value;
+            document.getElementById('txtStudentClass').value = document.getElementById('txtClass').value;
+            document.getElementById('txtStudentRoll').value = document.getElementById('txtroll').value;
+            document.getElementById('txtTotalMarks').value = totalMarks;
+            document.getElementById('txtAvgMarks').value = per;
+            document.getElementById('txtGrade').value = grade;
+            document.getElementById('txtResult').value = result;
+    }
+</script>
